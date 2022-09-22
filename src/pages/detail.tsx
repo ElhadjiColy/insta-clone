@@ -1,7 +1,5 @@
 import React from 'react'
 
 export const Detail: React.FC = () => {
-  return (
-    <div>detail</div>
-  )
+  return <div>Detail</div>
 }
