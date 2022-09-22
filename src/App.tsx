@@ -40,9 +40,9 @@ function App() {
           </div>
         </div>
       </nav>
-      <div>
+      {/* <div>
         <Card />
-      </div>
+      </div> */}
     </div>
   )
 }
