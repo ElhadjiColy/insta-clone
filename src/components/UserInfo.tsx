@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const UserInfo: React.FC = () => {
-  return <div>UserInfo</div>
+  return <div>User Info</div>
 }
