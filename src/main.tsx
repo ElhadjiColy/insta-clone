@@ -11,11 +11,13 @@ import {
 import { Feed } from './pages/feed'
 import { Profile } from './pages/profile'
 import { Detail } from './pages/detail'
+import ErrorPage from './pages/error-page'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Feed/>,
+    element: <Feed />,
+    errorElement: <ErrorPage/>
   },
   {
     path: "/profile",
@@ -24,11 +26,12 @@ const router = createBrowserRouter([
   {
     path: "/detail",
     element: <Detail/>,
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    {/* <App/> */}
   </React.StrictMode>
 )
