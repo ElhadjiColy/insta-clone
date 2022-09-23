@@ -9,7 +9,7 @@ export const Detail: React.FC = () => {
         <div className='justify-center flex flex-col h-screen w-screen items-center'>
             <div className='text-3xl uppercase'>{detail?.profile?.user?.username}</div>
             <div className='h-auto w-96'>
-                <Card imgSrc={detail.image} height={80} width={100} />
+                <Card imgSrc={detail.image} height={'80%'} width={'100%'} />
             </div>
             <div className='flex justify-between space-x-4'>
                 <div className='flex'>

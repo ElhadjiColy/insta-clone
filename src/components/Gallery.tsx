@@ -2,11 +2,11 @@ import { Card } from './Card'
 
 const Gallery = ({ galleries }: { galleries: any[] }) => {
   return (
-    <div className="grid gap-x-8 gap-y-4 grid-cols-4 ">
+    <div className="grid grid-cols-4 grid-flow-col gap-2">
       {galleries.map((url) => (
         <div key={url}>
           {' '}
-          <Card imgSrc={url} height={500} width={250} />
+          <Card imgSrc={url} height={'80px'} width={'100px'} />
         </div>
       ))}
     </div>
