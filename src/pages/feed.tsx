@@ -1,11 +1,23 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Gallery from '../components/Gallery'
 import { Header } from '../components/Header'
 import { Search } from '../components/Search'
-import feeds from '../fakeData/feeds.json'
 
 export const Feed: React.FC = () => {
-  
+  const url = 'https://instagram-arona-back.herokuapp.com/api/photousers/'
+  const [feeds, setfeeds] = useState<any[]>([])
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((feeds: any) => {
+        setfeeds(feeds?.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [])
+
   return (
     <div>
       <nav className="bg-slate-200 ">
@@ -18,7 +30,7 @@ export const Feed: React.FC = () => {
         </div>
       </nav>
       <div className="flex justify-center pt-70">
-        <Gallery galleries={feeds.map(feed => feed.image)} />
+        <Gallery galleries={feeds} />
       </div>
     </div>
   )
