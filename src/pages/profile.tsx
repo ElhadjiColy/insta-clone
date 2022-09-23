@@ -4,21 +4,22 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 export const Profile: React.FC = () => {
-  const [profile, setProfile] = useState<any>({})
-  const params = useParams()
-  if (params?.id) {
-    useEffect(() => {
-      const url = `https://instagram-arona-back.herokuapp.com/api/profile/${params?.id}/`
-      axios
-        .get(url)
-        .then((value) => {
-          setProfile(value.data)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }, [])
-  }
+    const [profile, setProfile] = useState<any>({})
+    const params = useParams()
+    
+    if (params?.id) {
+        useEffect(() => {
+            const url = `https://instagram-arona-back.herokuapp.com/api/profile/${params?.id}/`
+            axios
+            .get(url)
+            .then((value) => {
+                setProfile(value.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }, [])
+    }
 
   return (
     <div className="h-screen">
